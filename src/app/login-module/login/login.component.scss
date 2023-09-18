@@ -1,0 +1,16 @@
+.login-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 70%;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+}

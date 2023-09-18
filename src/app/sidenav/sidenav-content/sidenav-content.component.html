@@ -1,0 +1,26 @@
+<!-- <div class="flex">
+  <mat-card appearance="raised">
+    <mat-card-header>
+      <mat-card-title>Portfolio</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Month and Year</mat-label>
+        <input matInput [matDatepicker]="dp" [formControl]="date" />
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker
+          #dp
+          startView="multi-year"
+          (monthSelected)="setMonthAndYear($event, dp)"
+          panelClass="example-month-picker"
+        >
+        </mat-datepicker>
+      </mat-form-field>
+      <app-calculation-form></app-calculation-form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->
+<app-basic-info></app-basic-info>

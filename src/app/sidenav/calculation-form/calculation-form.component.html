@@ -1,0 +1,26 @@
+<form [formGroup]="calcForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-label>Income</mat-label>
+    <mat-form-field>
+      <input
+        type="number"
+        name="income"
+        id="income"
+        formControlName="income"
+        matInput
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-label>PPF </mat-label>
+    <mat-form-field>
+      <input type="number" name="ppf" id="ppf" formControlName="ppf" matInput />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-label>SGB </mat-label>
+    <mat-form-field>
+      <input type="number" name="sgb" id="sgb" formControlName="sgb" matInput />
+    </mat-form-field>
+  </p>
+</form>
