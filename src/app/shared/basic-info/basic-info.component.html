@@ -2,7 +2,7 @@
   <div class="form-wrapper">
     <mat-card>
       <mat-card-content
-        ><form [formGroup]="basicFormGroup">
+        ><form [formGroup]="basicFormGroup" (submit)="saveBasicInfo()">
           <p>
             <mat-form-field class="form-field">
               <mat-label>Current Age</mat-label>
@@ -11,7 +11,7 @@
                 placeholder="Enter current age"
                 type="number"
                 min="0"
-                formControlName="currentAge"
+                formControlName="current_age"
                 required
               />
             </mat-form-field>
@@ -24,7 +24,7 @@
                 placeholder="Enter Financial age"
                 type="number"
                 min="0"
-                formControlName="currentAge"
+                formControlName="fi_age"
                 required
               />
             </mat-form-field>
@@ -37,12 +37,19 @@
                 placeholder="Enter lifespapn"
                 type="number"
                 min="0"
-                formControlName="lifeSpan"
+                formControlName="lifespan"
                 required
               />
             </mat-form-field>
           </p>
-          <button mat-raised-button color="primary">Submit</button>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="!basicFormGroup.valid"
+          >
+            Submit
+          </button>
         </form>
       </mat-card-content>
     </mat-card>
