@@ -1,0 +1,56 @@
+<mat-card>
+  <mat-card-content>
+    <form class="currentCorpusForm" [formGroup]="currentCorpusForm">
+      <p>
+        <mat-radio-group
+          aria-label="Select an option"
+          formControlName="fi_portfolio_type"
+        >
+          <mat-radio-button value="aggressive">Aggressive</mat-radio-button>
+          <mat-radio-button value="balanced">Balanced</mat-radio-button>
+          <mat-radio-button value="conservative">Conservative</mat-radio-button>
+        </mat-radio-group>
+      </p>
+      <p>
+        <legend>Corpus Amount</legend>
+      </p>
+
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>FD/RD Amount</mat-label>
+          <input
+            matInput
+            placeholder="Enter FD/RD Amount"
+            type="number"
+            min="0"
+            formControlName="FD/RD"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Equity Mutual Fund</mat-label>
+          <input
+            matInput
+            placeholder="Enter Equity Mutual Fund Amount"
+            type="number"
+            min="0"
+            formControlName="Equity Mutual Fund"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Debt Mutual Fund</mat-label>
+          <input
+            matInput
+            placeholder="Enter Debt Mutual Fund Amount"
+            type="number"
+            min="0"
+            formControlName="Debt Mutual Fund"
+          />
+        </mat-form-field>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

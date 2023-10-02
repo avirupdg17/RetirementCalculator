@@ -2,9 +2,12 @@
   <div class="form-wrapper">
     <mat-card>
       <mat-card-content
-        ><form [formGroup]="basicFormGroup" (submit)="saveBasicInfo()">
+        ><form
+          [formGroup]="basicFormGroup"
+          class="basicForm"
+        >
           <p>
-            <mat-form-field class="form-field">
+            <mat-form-field class="form-field" appearance="outline">
               <mat-label>Current Age</mat-label>
               <input
                 matInput
@@ -15,9 +18,11 @@
                 required
               />
             </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field class="form-field">
+            <mat-checkbox
+              (change)="disable('fi_age')"
+              [checked]="fi_age_required"
+            ></mat-checkbox>
+            <mat-form-field class="form-field" appearance="outline">
               <mat-label>Financial Age</mat-label>
               <input
                 matInput
@@ -25,12 +30,11 @@
                 type="number"
                 min="0"
                 formControlName="fi_age"
-                required
+                [required]="fi_age_required"
               />
             </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field class="form-field">
+
+            <mat-form-field class="form-field" appearance="outline">
               <mat-label>Life Span</mat-label>
               <input
                 matInput
@@ -41,15 +45,32 @@
                 required
               />
             </mat-form-field>
+            <mat-checkbox
+              [checked]="monthly_expenses"
+              (change)="disable('monthly-expense')"
+            ></mat-checkbox>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Monthly Expenses</mat-label>
+              <input
+                matInput
+                placeholder="Monthly Expenses"
+                type="number"
+                min="0"
+                formControlName="monthly_expenses"
+                required
+              />
+            </mat-form-field>
           </p>
-          <button
-            type="submit"
-            mat-raised-button
-            color="primary"
-            [disabled]="!basicFormGroup.valid"
-          >
-            Submit
-          </button>
+          <!-- <p>
+            <button
+              type="submit"
+              mat-raised-button
+              color="primary"
+              [disabled]="!basicFormGroup.valid"
+            >
+              Submit
+            </button>
+          </p> -->
         </form>
       </mat-card-content>
     </mat-card>

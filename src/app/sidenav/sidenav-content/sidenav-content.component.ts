@@ -15,6 +15,7 @@ import {
   MatDatepicker,
   MatDatepickerModule,
 } from '@angular/material/datepicker';
+import { DataServiceService } from 'src/app/services/data-service.service';
 
 const moment = _moment;
 
@@ -49,7 +50,9 @@ export const MY_FORMATS = {
 })
 export class SidenavContentComponent {
   date = new FormControl(moment());
-
+  public finalForm: any = {};
+  public retirementAge: any;
+  public isLoading: boolean = false;
   setMonthAndYear(
     normalizedMonthAndYear: Moment,
     datepicker: MatDatepicker<Moment>
@@ -59,5 +62,33 @@ export class SidenavContentComponent {
     ctrlValue.year(normalizedMonthAndYear.year());
     this.date.setValue(ctrlValue);
     datepicker.close();
+  }
+  constructor(private dataService: DataServiceService) {}
+  onValueChange(event: any) {
+    console.log(event);
+    this.finalForm = { ...this.finalForm, ...event.value };
+    let to_calculate = this.finalForm['monthly_expenses']
+      ? 'fi_age'
+      : 'monthly_expenses';
+    this.finalForm = {
+      ...this.finalForm,
+      to_calculate: to_calculate,
+      confidence: 95,
+    };
+    console.log(this.finalForm);
+  }
+  submitForm() {
+    this.isLoading = true;
+    let url = 'https://work-this-weekend.vercel.app/calculate';
+    const attr = new URLSearchParams();
+    Object.keys(this.finalForm).forEach((key) => {
+      attr.set(key, (this.finalForm as any)[key]);
+    });
+    console.log(attr);
+    // const attr = { ...this.basicFormGroup.value };
+    this.dataService.postData(url, attr).subscribe((res: any) => {
+      this.retirementAge = res.result;
+      this.isLoading = false;
+    });
   }
 }

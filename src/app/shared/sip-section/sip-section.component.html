@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-content>
+    <form class="basicForm" [formGroup]="sipAmountForm">
+      <p>
+        <mat-checkbox (change)="checked = !checked">SIP Amount</mat-checkbox>
+      </p>
+      <p>
+        <legend>SIP {{ checked ? "Percentages" : "Amounts" }}</legend>
+      </p>
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>FD/RD {{ checked ? "Percentage" : "Amount" }}</mat-label>
+          <input
+            matInput
+            placeholder="Enter FD/RD  {{ checked ? 'percentages' : 'amounts' }}"
+            type="number"
+            min="0"
+            formControlName="FD/RD"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label
+            >Equity Mutual Fund
+            {{ checked ? "Percentage" : "Amount" }}</mat-label
+          >
+          <input
+            matInput
+            placeholder="Equity Mutual Fund {{
+              checked ? 'percentages' : 'amounts'
+            }}"
+            type="number"
+            min="0"
+            formControlName="Equity Mutual Fund"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label
+            >Debt Mutual Fund {{ checked ? "Percentage" : "Amount" }}</mat-label
+          >
+          <input
+            matInput
+            placeholder="Enter Debt Mutual Fund {{
+              checked ? 'percentages' : 'amounts'
+            }}"
+            type="number"
+            min="0"
+            formControlName="Debt Mutual Fund"
+          />
+        </mat-form-field>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

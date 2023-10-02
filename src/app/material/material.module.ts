@@ -11,6 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MomentDateModule } from '@angular/material-moment-adapter';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatProgressBarModule} from '@angular/material/progress-bar'
 @NgModule({
   declarations: [],
   imports: [
@@ -26,6 +30,10 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatCardModule,
     MomentDateModule,
     MatStepperModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatProgressBarModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,6 +47,10 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatCardModule,
     MomentDateModule,
     MatStepperModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatProgressBarModule
   ],
 })
 export class MaterialModule {}

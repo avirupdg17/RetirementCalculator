@@ -23,4 +23,19 @@
     </mat-card-actions>
   </mat-card>
 </div> -->
-<app-basic-info></app-basic-info>
+<mat-progress-bar
+  *ngIf="isLoading"
+  mode="indeterminate"
+  color="primary"
+></mat-progress-bar>
+<app-basic-info (valueChangeEvent)="onValueChange($event)"></app-basic-info>
+<div class="flex">
+  <app-sip-section (valueChangeEvent)="onValueChange($event)"></app-sip-section>
+  <app-current-corpus
+    (valueChangeEvent)="onValueChange($event)"
+  ></app-current-corpus>
+  <app-result [retirementAge]="retirementAge"></app-result>
+</div>
+<div class="center">
+  <button mat-raised-button (click)="submitForm()">Calculate</button>
+</div>
