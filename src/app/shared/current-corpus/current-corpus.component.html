@@ -6,9 +6,30 @@
           aria-label="Select an option"
           formControlName="fi_portfolio_type"
         >
-          <mat-radio-button value="aggressive">Aggressive</mat-radio-button>
-          <mat-radio-button value="balanced">Balanced</mat-radio-button>
-          <mat-radio-button value="conservative">Conservative</mat-radio-button>
+          <mat-radio-button
+            value="aggressive"
+            matTooltip="FD/RD: 80%
+            Equity Mutual Fund: 20%"
+            [matTooltipPosition]="'below'"
+            matTooltipClass="my-tooltip"
+            >Aggressive</mat-radio-button
+          >
+          <mat-radio-button
+            value="balanced"
+            matTooltip="Debt Mutual Fund: 50%
+            Equity Mutual Fund: 50%"
+            [matTooltipPosition]="'below'"
+            matTooltipClass="my-tooltip"
+            >Balanced</mat-radio-button
+          >
+          <mat-radio-button
+            value="conservative"
+            matTooltip="Debt Mutual Fund: 30%
+            Equity Mutual Fund: 70%"
+            [matTooltipPosition]="'below'"
+            matTooltipClass="my-tooltip"
+            >Conservative</mat-radio-button
+          >
         </mat-radio-group>
       </p>
       <p>

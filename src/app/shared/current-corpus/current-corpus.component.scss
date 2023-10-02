@@ -7,3 +7,7 @@
   width: 20vw;
   padding: 0px 20px;
 }
+
+::ng-deep .my-tooltip {
+  white-space: pre-line !important;
+}

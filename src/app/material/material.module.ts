@@ -14,7 +14,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatProgressBarModule} from '@angular/material/progress-bar'
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [],
   imports: [
@@ -33,7 +34,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     MatSliderModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTooltipModule,
   ],
   exports: [
     MatToolbarModule,
@@ -50,7 +52,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     MatSliderModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTooltipModule,
   ],
 })
 export class MaterialModule {}
