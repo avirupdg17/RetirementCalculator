@@ -37,7 +37,12 @@
   <app-result [retirementAge]="retirementAge"></app-result>
 </div>
 <div class="center">
-  <button mat-raised-button (click)="submitForm()" [disabled]="!isValid">
+  <button
+    mat-raised-button
+    (click)="submitForm()"
+    [disabled]="!isValid"
+    color="primary"
+  >
     Calculate
   </button>
 </div>
