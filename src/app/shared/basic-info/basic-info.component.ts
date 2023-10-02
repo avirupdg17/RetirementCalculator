@@ -36,7 +36,7 @@ export class BasicInfoComponent implements OnInit {
       .subscribe((val) => {
         this.valueChangeEvent.emit({
           value: { ...val },
-          section: 'current-corpus',
+          section: 'basic-info',
           status: this.basicFormGroup.status,
         });
       });

@@ -75,7 +75,8 @@ export class SidenavContentComponent {
       to_calculate: to_calculate,
       confidence: 95,
     };
-    this.isValid = event.status || this.isValid;
+    this.isValid =
+      event.section === 'basic-info' ? event.status === 'VALID' : this.isValid;
   }
   submitForm() {
     this.isLoading = true;
