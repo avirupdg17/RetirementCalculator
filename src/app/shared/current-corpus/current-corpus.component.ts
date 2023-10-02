@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 @Component({
   selector: 'app-current-corpus',
@@ -12,10 +12,10 @@ export class CurrentCorpusComponent implements OnInit {
   @Output() valueChangeEvent = new EventEmitter<any>();
   constructor(private _formBuilder: FormBuilder) {
     this.currentCorpusForm = this._formBuilder.group({
-      fi_portfolio_type: [],
-      'FD/RD': [''],
-      'Debt Mutual Fund': [''],
-      'Equity Mutual Fund': [''],
+      fi_portfolio_type: ['balanced', Validators.required],
+      'FD/RD': ['0'],
+      'Debt Mutual Fund': ['0'],
+      'Equity Mutual Fund': ['0'],
     });
   }
   ngOnInit(): void {

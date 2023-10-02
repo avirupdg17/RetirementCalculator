@@ -30,6 +30,7 @@ export class BasicInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    this.basicFormGroup.controls['fi_age'].disable();
     this.basicFormGroup.valueChanges
       .pipe(debounceTime(1000))
       .subscribe((val) => {
