@@ -73,7 +73,7 @@ export class SidenavContentComponent {
       : 'monthly_expenses';
     this.finalForm = {
       ...this.finalForm,
-      to_calculate: to_calculate,
+      to_calculate: this.to_calculate,
       confidence: 95,
     };
     this.isValid =
