@@ -13,9 +13,9 @@ export class CurrentCorpusComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {
     this.currentCorpusForm = this._formBuilder.group({
       fi_portfolio_type: ['balanced', Validators.required],
-      'FD/RD': ['0'],
-      'Debt Mutual Fund': ['0'],
-      'Equity Mutual Fund': ['0'],
+      'FD/RD': [0],
+      'Debt Mutual Fund': [0],
+      'Equity Mutual Fund': [0],
     });
   }
   ngOnInit(): void {
