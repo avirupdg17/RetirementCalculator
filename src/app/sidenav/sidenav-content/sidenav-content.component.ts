@@ -54,6 +54,7 @@ export class SidenavContentComponent {
   public retirementAge: any;
   public isLoading: boolean = false;
   public isValid: boolean = false;
+  public to_calculate:string;
   setMonthAndYear(
     normalizedMonthAndYear: Moment,
     datepicker: MatDatepicker<Moment>
@@ -67,7 +68,7 @@ export class SidenavContentComponent {
   constructor(private dataService: DataServiceService) {}
   onValueChange(event: any) {
     this.finalForm = { ...this.finalForm, ...event.value };
-    let to_calculate = this.finalForm['monthly_expenses']
+    this.to_calculate = this.finalForm['monthly_expenses']
       ? 'fi_age'
       : 'monthly_expenses';
     this.finalForm = {
