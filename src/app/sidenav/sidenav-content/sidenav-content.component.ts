@@ -54,7 +54,7 @@ export class SidenavContentComponent {
   public retirementAge: any;
   public isLoading: boolean = false;
   public isValid: boolean = false;
-  public to_calculate:string;
+  public to_calculate:string = '';
   setMonthAndYear(
     normalizedMonthAndYear: Moment,
     datepicker: MatDatepicker<Moment>
