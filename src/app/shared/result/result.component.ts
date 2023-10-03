@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultComponent {
   @Input() retirementAge: number = 0;
-  @Input() to_calculate:string;
+  @Input() to_calculate:string = '';
 }
