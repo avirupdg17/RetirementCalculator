@@ -67,6 +67,7 @@ export class SidenavContentComponent {
   }
   constructor(private dataService: DataServiceService) {}
   onValueChange(event: any) {
+    this.retirementAge=0;
     this.finalForm = { ...this.finalForm, ...event.value };
     this.to_calculate = this.finalForm['monthly_expenses']
       ? 'fi_age'
@@ -86,8 +87,6 @@ export class SidenavContentComponent {
     Object.keys(this.finalForm).forEach((key) => {
       attr.set(key, (this.finalForm as any)[key]);
     });
-    console.log(attr);
-    // const attr = { ...this.basicFormGroup.value };
     this.dataService.postData(url, attr).subscribe((res: any) => {
       this.retirementAge = res.result;
       this.isLoading = false;
